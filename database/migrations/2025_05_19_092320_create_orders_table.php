@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->date('birthday')->nullable();
             $table->string('total_price');
-            $table->Text('note')->nullable();
-            $table->foreignId('payment_method_id')->nullable()->constrained('payment_methods')->onDelete('cascade');
+            $table->text('note')->nullable();
+            $table->foreignId('payment_method_id')->nullable()->constrained('payment_methods')->nullOnDelete();
             $table->integer('paid_amount')->nullable();
             $table->integer('change_amount')->nullable();
             $table->timestamps();
