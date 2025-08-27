@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OrderProduct extends Model
 {
+
+    protected $fillable = ['order_id', 'product_id', 'quantity', 'unit_price'];
      public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
